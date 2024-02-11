@@ -45,3 +45,8 @@ seuil_plage = (hauteur_mer) + 0.003
 # génération
 monde.generate(...)
 ```
+
+# Exemples
+Voici quelques captures d'écran de mondes générés avec ce code : 
+![Screenshot of aa continent map](/pictures/continent_01.png)
+![Screenshot of a archipelago map](/pictures/archipel_01.png)
