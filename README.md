@@ -1,52 +1,52 @@
 # Random_procedural_environment
-Ce projet python a pour but de générer une carte semi-aléatoire représentant un environnement complexe et réaliste vu du dessus en 2D. L'environnement contient des :
-- biomes différents
-- dénivelés adaptés
-- rivières
-- fleuves
-- végétations
+This python project aims to generate a semi-random map representing a complex and realistic environment seen from above in 2D. The environment contains:
+- different biomes
+- adapted elevations
+- rivers
+- streams
+- vegetation
 
 # Installation
-- Installer les librairies Python
+- Install Python libraries
 ```sh
 pip install -r requirements.txt
 ```
 
-# Configuration de l'algorithme
-Les valeurs internes utilisées pour l'algorithme peuvent être modifiés dans le main du fichier `labyrinthe_resolution.py`. Ce main se situe tout en bas du code.
+# Algorithm configuration
+The internal values ​​used for the algorithm can be modified in the main of the `labyrinthe_resolution.py` file. This main is located at the bottom of the code.
 
-Ce projet contients énormément de paramètres. Je ne liste ici que les plus importants qui peuvent être modifier :
+This project contains a lot of parameters. I only list here the most important ones that can be modified:
 
 ```python
-monde = world(130) # taille du monde
+monde = world(130) # size of the world
 
-# Températures et précipitation
+# Temperatures and precipitation
 T_min = 0
-T_max = 30  # T max est 30°
+T_max = 30  # T max is 30°
 P_min = 0
-P_max = 100  # P max est 100mm
+P_max = 100  # P max is 100mm
 
-# Relief et frontières
-nbr_cellules = 10 # Plus il y a de cellules, plus il peut y avoir de biomes différents. Mais, attention, ca dépend aussi de la taille des cartes de Perlin de températures et précipitations 
-seuil_visualisation_relief = 0.007  # plus c'est élevé moins on vois le relief
+# Relief and frontier
+nbr_cellules = 10 # The more cells there are, the more different biomes there can be. But be careful, it also depends on the size of the Perlin maps of temperatures and precipitations
+seuil_visualisation_relief = 0.007  # the higher it is, the less you can see the relief
 
-# Paramètres mer
-# -1=normal / -0.3=Minecraft_zoomé (avec -1 on a des valeurs de Perlin entre [-1 , 1]) / ne pas faire plus que 1 (car bezier non défini au dessus)
+# Sea settings
+# -1=normal / -0.3=Minecraft Zoom (with -1 we have Perlin values ​​between [-1, 1]) / do not do more than 1 (because bezier not defined above)
 min_hauteur_terre = -0.4
 
-archipel = False # En True, la carte passe sous forme d'archipel
+archipel = False # In True, the map changes to an archipelago.
 
-# paramètres rivières
+# river settings
 nb_cours_eau = 20
 
-# paramètres plages
+# settings ranges
 seuil_plage = (hauteur_mer) + 0.003
 
-# génération
+# generation
 monde.generate(...)
 ```
 
-# Exemples
-Voici quelques captures d'écran de mondes générés avec ce code : 
+# Examples
+Here are some screenshots of worlds generated with this code:
 ![Screenshot of aa continent map](/pictures/continent_01.png)
 ![Screenshot of a archipelago map](/pictures/archipel_01.png)
